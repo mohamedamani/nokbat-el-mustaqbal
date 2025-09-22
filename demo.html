@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نخبة المستقبل - منصة التعليم الذكية | Nokbat El Mustaqbal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Modern, comfortable primary colors
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        // Warm, reassuring secondary colors
+                        secondary: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                            950: '#422006',
+                        },
+                        // Success colors with Algerian inspiration
+                        success: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        // Algerian flag colors
+                        algerian: {
+                            green: '#006233',
+                            white: '#ffffff',
+                            red: '#d21034',
+                        },
+                        // Neutral grays for comfort
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        // Warm accent colors
+                        accent: {
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            orange: '#f97316',
+                            teal: '#14b8a6',
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['Noto Naskh Arabic', 'serif'],
+                        latin: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px 0 rgba(0, 0, 0, 0.1)',
+                        'medium': '0 4px 25px 0 rgba(0, 0, 0, 0.15)',
+                        'strong': '0 8px 40px 0 rgba(0, 0, 0, 0.2)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-in': 'slideIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        },
+                        float: {
+                            '0%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                            '100%': { transform: 'translateY(0px)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .arabic-text {
+            font-family: 'Noto Naskh Arabic', serif;
+            direction: rtl;
+            text-align: right;
+            font-weight: 500;
+        }
+        .latin-text {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+            text-align: left;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #006233 100%);
+        }
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid transparent;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 1rem;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1);
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .btn-primary {
+            background: #0284c7;
+            color: white;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+        .btn-secondary {
+            background: #eab308;
+            color: white;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background: #ca8a04;
+        }
+        .btn-success {
+            background: #16a34a;
+            color: white;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+        }
+        .btn-success:hover {
+            background: #15803d;
+        }
+        .btn-outline {
+            background: white;
+            color: #0284c7;
+            border: 1px solid #bae6fd;
+        }
+        .btn-outline:hover {
+            background: #f0f9ff;
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+        }
+        .gradient-secondary {
+            background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+        }
+        .gradient-success {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.625rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .status-success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status-warning {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+        .status-error {
+            background: #fecaca;
+            color: #991b1b;
+        }
+        .status-info {
+            background: #e0f2fe;
+            color: #075985;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .card {
+                border-radius: 1rem;
+                margin: 0 0.5rem;
+            }
+            .btn {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+            .hero-bg h1 {
+                font-size: 2.5rem;
+            }
+            .hero-bg h2 {
+                font-size: 1.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-soft fixed w-full top-0 z-50 border-b border-neutral-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 gradient-primary rounded-2xl flex items-center justify-center animate-float shadow-soft">
+                            <span class="text-white font-bold text-xl">ن</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-neutral-800 arabic-text">نخبة المستقبل</h1>
+                        <p class="text-sm text-neutral-600 latin-text">Nokbat El Mustaqbal</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <button onclick="showDemo()" class="btn btn-primary px-6 py-3">
+                        <i class="fas fa-play mr-2"></i>
+                        <span class="arabic-text">تجربة مجانية</span>
+                    </button>
+                    <button onclick="showPricing()" class="btn btn-success px-6 py-3">
+                        <i class="fas fa-star mr-2"></i>
+                        <span class="arabic-text">الاشتراك - $1.5</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white pt-24 pb-16 overflow-hidden animate-fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-right animate-slide-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 arabic-text">
+                        نخبة المستقبل
+                    </h1>
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-4 latin-text">
+                        Nokbat El Mustaqbal
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 arabic-text max-w-4xl">
+                        منصة تعليمية ذكية ومتطورة للطلاب الجزائريين - تعمل بدون إنترنت وتصل إلى كل قرية نائية
+                    </p>
+                    <p class="text-lg md:text-xl mb-12 latin-text opacity-90">
+                        A Smart, AI-Powered Educational Platform - Teaching, Not Just Solving
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 rtl:space-x-reverse">
+                        <button onclick="startLearning()" class="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-neutral-100 transition-all shadow-soft transform hover:scale-105">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            <span class="arabic-text">ابدأ التعلم الآن</span>
+                        </button>
+                        <button onclick="watchDemo()" class="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white hover:text-primary-600 transition-all">
+                            <i class="fas fa-play mr-2"></i>
+                            <span class="arabic-text">شاهد العرض التوضيحي</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden md:block animate-float">
+                    <div class="relative">
+                        <div class="w-96 h-96 mx-auto glass rounded-3xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-brain text-8xl mb-4 text-white/80"></i>
+                                <p class="text-xl font-semibold arabic-text">الذكاء الاصطناعي</p>
+                                <p class="text-sm opacity-75 arabic-text">يعلمك خطوة بخطوة</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-12 h-12 bg-secondary-400 rounded-full animate-bounce-gentle"></div>
+                        <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-accent-pink rounded-full animate-bounce-gentle" style="animation-delay: 0.5s"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 arabic-text">لماذا نخبة المستقبل؟</h2>
+                <p class="text-xl text-gray-600 arabic-text">منصة تعليمية تدرّس وتعلّم، لا تحل الواجبات فقط</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AI Teacher Feature -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-robot text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 arabic-text">معلم ذكي بالذكاء الاصطناعي</h3>
+                    <ul class="space-y-2 arabic-text text-gray-700">
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>شرح خطوة بخطوة لكل مسألة</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>تحليل الأخطاء وتصحيحها</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>أمثلة من الحياة الواقعية</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>طرق حل متعددة لكل مسألة</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>تفسير المفاهيم بطريقة مبسطة</li>
+                    </ul>
+                </div>
+
+                <!-- Complete Curriculum -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-book-open text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 arabic-text">منهج كامل معتمد من الوزارة</h3>
+                    <ul class="space-y-2 arabic-text text-gray-700">
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>جميع المواد من الصف 1 إلى 12</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>آلاف الدروس والتمارين</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>تجارب علمية افتراضية</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>فيديوهات تعليمية تفاعلية</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>تمارين متدرجة الصعوبة</li>
+                    </ul>
+                </div>
+
+                <!-- Offline Capability -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-purple-600 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-wifi-slash text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4 arabic-text">يعمل بدون إنترنت</h3>
+                    <ul class="space-y-2 arabic-text text-gray-700">
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>تحميل المحتوى مرة واحدة</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>الوصول في أي مكان وزمان</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>مثالي للمناطق النائية</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>مزامنة تلقائية عند الاتصال</li>
+                        <li><i class="fas fa-check text-green-600 ml-2"></i>توفير في استهلاك البيانات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo-section" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 arabic-text">جرب المنصة الآن</h2>
+                <p class="text-xl text-gray-600 arabic-text">شاهد كيف يعلمك الذكاء الاصطناعي خطوة بخطوة</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                            <i class="fas fa-calculator text-2xl"></i>
+                            <div>
+                                <h3 class="text-xl font-bold arabic-text">درس الرياضيات - الصف العاشر</h3>
+                                <p class="text-sm opacity-90 arabic-text">الدوال والمتغيرات</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2 rtl:space-x-reverse">
+                            <button class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                            <button class="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg mb-6">
+                                <h4 class="text-lg font-bold text-blue-800 mb-3 arabic-text">المسألة:</h4>
+                                <p class="text-gray-700 arabic-text text-lg">إذا كان f(x) = 2x + 3، احسب قيمة f(5)</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="ai-step bg-green-50 border-r-4 border-green-500 p-4 rounded-lg">
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-green-800 arabic-text">فهم المسألة</h5>
+                                            <p class="text-gray-700 arabic-text mt-1">لدينا دالة f(x) = 2x + 3، ونريد إيجاد قيمة الدالة عندما x = 5</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ai-step bg-yellow-50 border-r-4 border-yellow-500 p-4 rounded-lg">
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-yellow-800 arabic-text">التعويض</h5>
+                                            <p class="text-gray-700 arabic-text mt-1">نضع 5 مكان x في الدالة:</p>
+                                            <p class="text-xl font-mono bg-yellow-100 p-2 rounded mt-2">f(5) = 2(5) + 3</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ai-step bg-orange-50 border-r-4 border-orange-500 p-4 rounded-lg">
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-orange-800 arabic-text">الحساب</h5>
+                                            <p class="text-gray-700 arabic-text mt-1">نحسب الضرب أولاً، ثم الجمع:</p>
+                                            <p class="text-xl font-mono bg-orange-100 p-2 rounded mt-2">f(5) = 10 + 3 = 13</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ai-step bg-green-100 border-r-4 border-green-600 p-4 rounded-lg">
+                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                        <div class="w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center">
+                                            <i class="fas fa-check text-sm"></i>
+                                        </div>
+                                        <div class="flex-1">
+                                            <h5 class="font-bold text-green-800 arabic-text">الإجابة النهائية</h5>
+                                            <p class="text-gray-700 arabic-text mt-1">إذن f(5) = 13</p>
+                                            <div class="bg-green-200 p-3 rounded-lg mt-2">
+                                                <p class="font-bold text-green-800 arabic-text">💡 نصيحة: في الدوال، نعوض قيمة x في كل مكان نجدها في التعبير</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="bg-gray-100 rounded-lg p-6 mb-6">
+                                <h4 class="text-lg font-bold mb-4 arabic-text">التصور المرئي</h4>
+                                <div class="bg-white rounded-lg p-4 border-2 border-dashed border-gray-300 text-center">
+                                    <div class="space-y-4">
+                                        <div class="text-2xl font-mono">f(x) = 2x + 3</div>
+                                        <div class="flex items-center justify-center space-x-2">
+                                            <span class="text-lg">x =</span>
+                                            <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xl">5</div>
+                                        </div>
+                                        <div class="text-xl">⬇️</div>
+                                        <div class="text-2xl font-mono">f(5) = 2(5) + 3 = 13</div>
+                                        <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-2xl mx-auto">13</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-purple-50 rounded-lg p-6">
+                                <h4 class="text-lg font-bold mb-4 arabic-text text-purple-800">تمارين إضافية</h4>
+                                <div class="space-y-3">
+                                    <button class="w-full text-right bg-white hover:bg-purple-100 p-3 rounded-lg border border-purple-200 transition-colors arabic-text">
+                                        <span class="font-medium">تمرين 1:</span> احسب f(3) إذا كان f(x) = 2x + 3
+                                    </button>
+                                    <button class="w-full text-right bg-white hover:bg-purple-100 p-3 rounded-lg border border-purple-200 transition-colors arabic-text">
+                                        <span class="font-medium">تمرين 2:</span> احسب f(-2) إذا كان f(x) = 2x + 3
+                                    </button>
+                                    <button class="w-full text-right bg-white hover:bg-purple-100 p-3 rounded-lg border border-purple-200 transition-colors arabic-text">
+                                        <span class="font-medium">تمرين 3:</span> إذا كان f(x) = 13، ما قيمة x؟
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing-section" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4 arabic-text">خطط الاشتراك</h2>
+                <p class="text-xl text-gray-600 arabic-text">تعليم عالي الجودة بأسعار في متناول الجميع</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Free Plan -->
+                <div class="pricing-card rounded-2xl p-8 text-center">
+                    <div class="mb-6">
+                        <i class="fas fa-heart text-4xl text-red-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold arabic-text mb-2">مجاني للمحتاجين</h3>
+                        <p class="text-gray-600 arabic-text">للطلاب ذوي الاحتياجات الخاصة والأسر محدودة الدخل</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-green-600 mb-2">مجاني</div>
+                        <div class="text-gray-500 arabic-text">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 arabic-text text-right">
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>جميع المواد والدروس</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>المعلم الذكي</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>التجارب الافتراضية</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>لوحة تحكم للأهل</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>العمل بدون إنترنت</li>
+                        <li><i class="fas fa-info-circle text-blue-500 ml-2"></i>يتطلب إثبات الأهلية</li>
+                    </ul>
+                    <button onclick="applyForFree()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold transition-colors arabic-text">
+                        تقدم للحصول على الوصول المجاني
+                    </button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card featured rounded-2xl p-8 text-center transform scale-105">
+                    <div class="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-bold mb-4 arabic-text">الأكثر شعبية</div>
+                    <div class="mb-6">
+                        <i class="fas fa-star text-4xl text-yellow-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold arabic-text mb-2">الاشتراك السنوي</h3>
+                        <p class="text-white/90 arabic-text">للطلاب العاديين - أقل من دولار ونصف سنوياً</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-5xl font-bold text-yellow-400 mb-2">$1.5</div>
+                        <div class="text-white/80 arabic-text">سنوياً فقط</div>
+                        <div class="text-sm text-white/70 arabic-text mt-1">حوالي 200 دينار جزائري</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 arabic-text text-right text-white">
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>جميع مزايا الخطة المجانية</li>
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>دعم أولوية</li>
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>شهادات إنجاز</li>
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>مسابقات وطنية</li>
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>تحليلات متقدمة</li>
+                        <li><i class="fas fa-check text-yellow-400 ml-2"></i>مجموعات دراسية</li>
+                    </ul>
+                    <button onclick="subscribePremium()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 py-3 rounded-lg font-bold transition-colors arabic-text">
+                        اشترك الآن - $1.5 سنوياً
+                    </button>
+                </div>
+
+                <!-- Family Plan -->
+                <div class="pricing-card rounded-2xl p-8 text-center">
+                    <div class="mb-6">
+                        <i class="fas fa-users text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold arabic-text mb-2">خطة العائلة</h3>
+                        <p class="text-gray-600 arabic-text">لحتى 4 أطفال في نفس العائلة</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">$5.0</div>
+                        <div class="text-gray-500 arabic-text">سنوياً لـ 4 أطفال</div>
+                        <div class="text-sm text-gray-400 arabic-text mt-1">$1.25 للطفل الواحد</div>
+                    </div>
+                    <ul class="space-y-3 mb-8 arabic-text text-right">
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>جميع مزايا الخطة المميزة</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>حتى 4 حسابات طلاب</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>لوحة تحكم عائلية</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>مسابقات بين الأشقاء</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>جداول دراسية عائلية</li>
+                        <li><i class="fas fa-check text-green-500 ml-2"></i>تحميل جماعي للمحتوى</li>
+                    </ul>
+                    <button onclick="subscribeFamily()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition-colors arabic-text">
+                        اشترك في الخطة العائلية
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-600 arabic-text mb-4">💳 طرق الدفع المتاحة في الجزائر</p>
+                <div class="flex justify-center space-x-6 rtl:space-x-reverse">
+                    <div class="text-center">
+                        <i class="fas fa-credit-card text-2xl text-blue-600 mb-2"></i>
+                        <p class="text-sm arabic-text">البطاقات البنكية</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-mobile-alt text-2xl text-green-600 mb-2"></i>
+                        <p class="text-sm arabic-text">الدفع بالهاتف</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-university text-2xl text-purple-600 mb-2"></i>
+                        <p class="text-sm arabic-text">CCP & CIB</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fab fa-paypal text-2xl text-blue-500 mb-2"></i>
+                        <p class="text-sm arabic-text">PayPal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 rtl:space-x-reverse mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">ن</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold arabic-text">نخبة المستقبل</h3>
+                        <p class="text-sm text-gray-400 latin-text">Nokbat El Mustaqbal</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 arabic-text mb-8 max-w-2xl mx-auto">
+                    منصة تعليمية ذكية للطلاب الجزائريين، نحو مستقبل أفضل للتعليم في الجزائر والوطن العربي.
+                    <br>
+                    صُنع بكل حب في الجزائر 🇩🇿 من أجل مستقبل أفضل لأطفالنا
+                </p>
+                <p class="text-sm text-gray-500 arabic-text">
+                    © 2024 نخبة المستقبل - جميع الحقوق محفوظة
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Demo functionality
+        function showDemo() {
+            document.getElementById('demo-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showPricing() {
+            document.getElementById('pricing-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function startLearning() {
+            alert('مرحباً بك في نخبة المستقبل! سيتم توجيهك إلى صفحة التسجيل.');
+        }
+        
+        function watchDemo() {
+            showDemo();
+        }
+        
+        function applyForFree() {
+            alert('للتقدم للحصول على الوصول المجاني، يرجى تحضير المستندات التالية:\n\n' +
+                  '• شهادة طبية (لذوي الاحتياجات الخاصة)\n' +
+                  '• شهادة دخل (للأسر محدودة الدخل)\n' +
+                  '• وثائق الخدمات الاجتماعية\n\n' +
+                  'سيتم مراجعة طلبك خلال 2-5 أيام عمل.');
+        }
+        
+        function subscribePremium() {
+            alert('الاشتراك السنوي المميز - $1.5 فقط!\n\n' +
+                  'المزايا:\n' +
+                  '✅ وصول غير محدود لجميع المواد\n' +
+                  '✅ المعلم الذكي بالذكاء الاصطناعي\n' +
+                  '✅ حلول مفصلة خطوة بخطوة\n' +
+                  '✅ تجارب افتراضية\n' +
+                  '✅ لوحة تحكم للأهل\n' +
+                  '✅ العمل بدون إنترنت\n\n' +
+                  'سيتم توجيهك إلى صفحة الدفع الآمنة.');
+        }
+        
+        function subscribeFamily() {
+            alert('خطة العائلة - $5.0 سنوياً لـ 4 أطفال!\n\n' +
+                  'وفر أكثر مع الخطة العائلية:\n' +
+                  '✅ جميع مزايا الخطة المميزة\n' +
+                  '✅ حتى 4 حسابات للأطفال\n' +
+                  '✅ لوحة تحكم عائلية موحدة\n' +
+                  '✅ مسابقات بين الأشقاء\n' +
+                  '✅ تقارير مقارنة\n\n' +
+                  'فقط $1.25 للطفل الواحد سنوياً!');
+        }
+        
+        function startNow() {
+            alert('أهلاً بك في نخبة المستقبل!\n\n' +
+                  'يمكنك البدء مجاناً الآن والاستفادة من:\n' +
+                  '• دروس تجريبية من جميع المواد\n' +
+                  '• تجربة المعلم الذكي\n' +
+                  '• تقييم مستواك الحالي\n\n' +
+                  'سيتم إنشاء حسابك المجاني خلال دقائق!');
+        }
+        
+        function learnMore() {
+            alert('نخبة المستقبل - منصة تعليمية ثورية\n\n' +
+                  '🎯 هدفنا: جعل التعليم عالي الجودة متاحاً لكل طفل جزائري\n\n' +
+                  '🤖 التكنولوجيا: ذكاء اصطناعي متطور للتعليم التفاعلي\n\n' +
+                  '📚 المحتوى: منهج وزارة التربية الوطنية كاملاً\n\n' +
+                  '💰 السعر: $1.5 سنوياً فقط - أقل من قهوة واحدة!\n\n' +
+                  '🌟 الرؤية: أن نكون المنصة التعليمية الأولى في الجزائر والوطن العربي');
+        }
+        
+        function scrollToFeatures() {
+            document.querySelector('section.py-20.bg-white').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
